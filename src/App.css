@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
 }
-
-.App-header {
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtvAw.ttf) format('truetype');
+}
+* {
+  transition: 300ms all;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+.wrapper {
   background-color: #282c34;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  gap: 10px;
+}
+.form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.list {
+  padding: 0;
+  margin: 10px 0 0;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.btn {
+  cursor: pointer;
+  background-color: #47a9a9;
+  border-radius: 4px;
+  padding: 10px 15px;
+  color: white;
+  border: none;
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.25);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:hover {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.5);
+}
+.inpt {
+  border-width: 0;
+  border-radius: 4px;
+  padding: 10px 15px;
+  outline: unset;
+}
+.inpt:focus {
+  box-shadow: 0 5px 10px rgba(255, 255, 255, 0.25);
 }

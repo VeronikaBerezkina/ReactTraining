@@ -2,30 +2,55 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = () => {
   //
-  const [click, setClick] = useState();
+  const [array, setArray] = useState<string[]>([]);
+  const [taskText, setTaskText] = useState('');
+
+  //
+  const addTask = () => {
+    setArray((prevArray) => [...prevArray, taskText]);
+    setTaskText('');
+  };
 
   //
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
+    <div className='wrapper'>
+      <div className='form'>
+        <button className='btn' onClick={addTask}>
+          Добавить
+        </button>
+        <input
+          className='inpt'
+          type='text'
+          placeholder='задачу'
+          value={taskText}
+          onChange={(event) => setTaskText(event.target.value)}
+        />
+        <button
+          className='btn'
+          style={{ backgroundColor: 'red' }}
+          onClick={() => setArray([])}
         >
-          Learn React
-        </a>
-        <button>Click me</button>
-      </header>
+          Сброс
+        </button>
+      </div>
+      <ol className='list'>
+        {array.map((task, index) => (
+          <li key={index}>{task}</li>
+        ))}
+      </ol>
+      {array.length > 0 && (
+        <button
+          className='btn'
+          style={{ backgroundColor: 'orange' }}
+          onClick={() => setArray(array.slice(0, -1))}
+        >
+          Удалить
+        </button>
+      )}
     </div>
   );
-}
+};
 
 export default App;
